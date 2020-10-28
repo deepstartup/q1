@@ -1,0 +1,34 @@
+[
+
+	{
+		"SourceName": "SQLServer",
+		"ConnectionType": "ODBC/pyodbc",
+		"ConnectionString": ["RON-SQLEXPRESS-XXXXXX"],
+		"ConnectionTrigger": "Event",
+		"SourceSecret": ["ABCD-ABCD-XYZ"]
+	},
+
+	{
+		"SourceName": "FileSystem",
+		"ConnectionType": "Stream I/O",
+		"ConnectionString": ["MountPath"],
+		"ConnectionTrigger": "FileWatcher",
+		"SourceSecret": ["persistent-volume-secrects"]
+	},
+
+	{
+		"SourceName": "Oracle",
+		"ConnectionType": "JDBC/cx_Oracle",
+		"ConnectionString": ["jdbcconn:port@host/conn"],
+		"ConnectionTrigger": "Event",
+		"SourceSecret": ["ABCD-ABCD-XYZ"]
+	},
+
+	{
+		"SourceName": "MYSQL",
+		"ConnectionType": "JDBC/mysql.connector",
+		"ConnectionString": ["mysql.connector.connect/conn"],
+		"ConnectionTrigger": "Event",
+		"SourceSecret": ["ABCD-ABCD-XYZ"]
+	}
+]

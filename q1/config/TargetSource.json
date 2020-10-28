@@ -1,0 +1,9 @@
+[
+	{
+		"TargetName": "Oracle",
+		"ConnectionType": "JDBC/cx_Oracle",
+		"ConnectionString": ["jdbcconn:port@host/conn"],
+		"ConnectionTrigger": "Event",
+		"SourceSecret": ["ABCD-ABCD-XYZ"]
+	}
+]

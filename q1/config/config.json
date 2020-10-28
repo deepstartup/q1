@@ -1,0 +1,60 @@
+{
+
+	"parallelProcessingProperty": {
+		"parallelProcess": true,
+        "multiProcess": true,
+        "subProcessNumber":10,
+		"forkSize": 4,
+		"chunkSize": 100000,
+		"coresNumber": 4,
+        "poolSize": 12,
+        "autoMemCalc":false
+	},
+	"payLoadProperty": {
+		"fileMinSize": 1000000,
+		"fileMaxSize": 1000000000,
+		"dbrowsMin": 1000000,
+		"dbrowsMax": 1000000000
+	},
+	"payLoadDBOrchestrator": [{
+			"DBTable": "XXXXXXXX",
+			"DBName": "Oracle",
+			"DBColumn": "YYYY",
+			"partitionKey": []
+		},
+		{
+			"DBTable": "XXXXXXXX",
+			"DBName": "MYSQL",
+			"DBColumn": "YYYY",
+			"partitionKey": []
+		},
+		{
+			"DBTable": "XXXXXXXX",
+    		"DBName": "PostGreSQL",
+			"DBColumn": "YYYY",
+			"partitionKey": []
+		}
+	],
+	"payLoadFileOrchestrator": {
+		"fileNameFormat": ["^.csv"],
+		"fileNameDateFormat": "MM-DD-YYYY:HH-MM-SS",
+		"fileTrigger": "coreFileWatcher.py",
+		"fileSplit": true
+	},
+	"FileSplitRules":[{
+	"size":100000
+	"chunk":4
+	},
+	{
+	"size":10000000
+	"chunk":10
+	}],
+	"DFSplitRules":[{
+	"size":100000
+	"chunk":4
+	},
+	{
+	"size":10000000
+	"chunk":10
+	}]
+}
